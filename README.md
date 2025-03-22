@@ -30,7 +30,7 @@ real-time calculator widget.
 To use the library in your own project:
 
 1. Include the HyperFormula library from a CDN, and either your own copy of 
-   `script.js`, and `styles.css` of from a CDN too in your HTML `<head>`:
+   `script.js`, and `styles.css` of DynamicCalculator from a CDN too in your HTML `<head>`:
 
    ```html
    <script src="https://cdn.jsdelivr.net/npm/hyperformula/dist/hyperformula.full.min.js"></script>
