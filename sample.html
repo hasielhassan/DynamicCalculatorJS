@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Calculators Demo</title>
+  <!-- Include HyperFormula from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hyperformula/dist/hyperformula.full.min.js"></script>
+  <!-- Include Dynamic Calculator script (your code) -->
+  <script src="script.js"></script>
+  <!-- Include styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Or also using https://raw.githack.com-->
+  <script src="https://raw.githack.com/hasielhassan/DynamicCalculatorJS/v0.0.1/script.js"></script>
+  <link rel="stylesheet" href="https://raw.githack.com/hasielhassan/DynamicCalculatorJS/v0.0.1/styles.css">
+  <!-- Additional styles for the sample layout -->
+  <style>
+    /* Flex container for demo only */
+    .calc-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="calc-row">
+    <!-- 1) Mortgage Calculator -->
+    <div class="DynamicCalculator" data-title="Mortgage Calculator">
+      <label>
+        Annual Interest Rate (%):
+        <input type="number" id="rate" min="0" step="1" value="8">
+      </label>
+      <br>
+      <label>
+        Number of Months:
+        <input type="number" id="months" min="0" value="360">
+      </label>
+      <br>
+      <label>
+        Loan Amount ($):
+        <input type="number" id="amount" min="0" value="800000">
+      </label>
+      <br>
+      <strong>Monthly Payment ($):</strong>
+      <span class="CalculatedResult" id="payment"
+            data-formula="ROUND(PMT((rate/100)/12, months, -amount), 2)">
+      </span>
+    </div>
+
+    <!-- 2) Car Loan Calculator -->
+    <div class="DynamicCalculator" data-title="Car Loan Calculator">
+      <label>
+        Annual Interest Rate (%):
+        <input type="number" id="carRate" min="0" step="1" value="7">
+      </label>
+      <br>
+      <label>
+        Number of Months:
+        <input type="number" id="carMonths" min="0" value="60">
+      </label>
+      <br>
+      <label>
+        Car Price ($):
+        <input type="number" id="carPrice" min="0" value="30000">
+      </label>
+      <br>
+      <label>
+        Down Payment ($):
+        <input type="number" id="carDown" min="0" value="5000">
+      </label>
+      <br>
+      <strong>Monthly Payment ($):</strong>
+      <span class="CalculatedResult" id="carPayment"
+            data-formula="ROUND(PMT((carRate/100)/12, carMonths, -(carPrice - carDown)), 2)">
+      </span>
+    </div>
+
+    <!-- 3) Tip Calculator -->
+    <div class="DynamicCalculator" data-title="Tip Calculator">
+      <label>
+        Bill Amount ($):
+        <input type="number" id="bill" min="0" value="100">
+      </label>
+      <br>
+      <label>
+        Tip (%):
+        <input type="number" id="tip" min="0" value="15">
+      </label>
+      <br>
+      <label>
+        Number of People:
+        <input type="number" id="people" min="1" value="4">
+      </label>
+      <br>
+      <strong>Tip per person ($):</strong>
+      <span class="CalculatedResult" id="tipPerPerson"
+            data-formula="ROUND((bill*(tip/100))/people, 2)">
+      </span>
+      <br>
+      <strong>Total per person ($):</strong>
+      <span class="CalculatedResult" id="totalPerPerson"
+            data-formula="ROUND((bill+(bill*(tip/100)))/people, 2)">
+      </span>
+    </div>
+  </div>
+
+  <script>
+    // Initialize the dynamic calculators once the DOM is ready.
+    document.addEventListener('DOMContentLoaded', BuildDynamicCalculators);
+  </script>
+</body>
+</html>

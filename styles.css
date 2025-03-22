@@ -1,0 +1,56 @@
+/* Container that holds the entire calculator */
+.calc-container {
+  width: 300px;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fefefe;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* The title at the top */
+.calc-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  color: #444;
+}
+
+/* Label styling */
+.calc-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* The text fields where the user enters data */
+.calc-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* The big bold line for the result label */
+.calc-result-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* The actual numeric result */
+.calc-result-value {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.2em;
+  color: #111;
+}
